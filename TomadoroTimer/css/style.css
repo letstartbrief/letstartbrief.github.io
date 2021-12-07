@@ -1,0 +1,133 @@
+@font-face {
+  font-family: Bebas Neue;
+  src: url('../fonts/bebasneue-book-webfont.woff2') format('woff2'),
+       url('../fonts/bebasneue-book-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100vh;
+	color: #fff;
+	background: #2B2A30;
+}
+
+.timer {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 500px;
+	height: 500px;
+
+	text-align: center;
+
+	border-radius: 50%;
+	background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
+	box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
+}
+
+.timer__svg {
+	position: absolute;
+
+	width: calc(100% + 40px);
+	height: calc(100% + 40px);
+
+  pointer-events: none;
+}
+.timer__circle {
+  fill: none;
+  stroke: none;
+}
+.timer__path-elapsed {
+  stroke-width: 2px;
+  stroke: #000;
+}
+.timer__path-remaining {
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  stroke: currentColor;
+}
+
+.timer__path-remaining.green {
+  color: #09A65A;
+}
+
+.timer__path-remaining.orange {
+  color: orange;
+}
+
+.timer__path-remaining.red {
+  color: #910A0A;
+}
+
+.timer__label {
+	display: inline-block;
+	width: 320px;
+	margin: 0;
+
+	color: inherit;
+	font-family: Bebas Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 196px;
+	line-height: 1;
+	/*text-align: center;*/
+
+	background: transparent;
+	border: none;
+}
+.timer__label:focus {
+	outline: none;
+}
+
+.timer__bottom {
+	position: absolute;
+	bottom: 54px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button {
+	color: inherit;
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.6em;
+
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+.button:hover {
+	opacity: 0.8;
+}
+
+.button--setting {
+	width: 24px;
+	height: 24px;
+	margin-top: 23px;
+
+	font-size: 0;
+
+	background: url(../images/gear.svg) no-repeat center /contain;
+}
+
+.d-none {
+	display: none;
+}
